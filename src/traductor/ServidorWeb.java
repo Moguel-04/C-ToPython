@@ -43,7 +43,7 @@ public class ServidorWeb {
         server.createContext("/", exchange -> {
             try {
                 String ruta = exchange.getRequestURI().getPath();
-                if (ruta.equals("/")) ruta = "/Index.html";
+                if (ruta.equals("/")) ruta = "/index.html";
 
                 Path base = Path.of("web").toAbsolutePath().normalize();
                 Path archivo = base.resolve(ruta.substring(1)).normalize();
