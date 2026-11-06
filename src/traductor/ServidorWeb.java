@@ -64,7 +64,7 @@ public class ServidorWeb {
                 responder(exchange, 500, "text/plain; charset=utf-8", "Error interno: " + e);
             }
         });
-        System.out.println("Servidor en http://localhost:8080");
+        System.out.println("Servidor en el puerto " + puerto);
     }
     private static void responder(HttpExchange ex, int codigo, String tipo, String cuerpo)
         throws IOException {
