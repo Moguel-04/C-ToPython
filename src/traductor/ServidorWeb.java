@@ -12,7 +12,9 @@ public class ServidorWeb {
     public static void main(String[] args) throws Exception {
         ServicioTraduccion.iniciar();
 
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        String p = System.getenv("PORT");
+        int puerto = (p != null) ? Integer.parseInt(p) : 8080;
+        HttpServer server = HttpServer.create(new InetSocketAddress(puerto), 0);
 
         server.createContext("/api/ping", exchange -> {
             byte[] datos = "Servidor funcionando".getBytes(StandardCharsets.UTF_8);
